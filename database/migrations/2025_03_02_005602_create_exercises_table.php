@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name'); // اسم التمرين
             $table->text('description')->nullable(); // وصف التمرين
-            $table->string('video')->nullable(); // رابط الفيديو (يمكن أن يكون فارغًا)
+            $table->string('video_url')->nullable(); // رابط الفيديو (يمكن أن يكون فارغًا)
             $table->string('image')->nullable(); // رابط الصورة (يمكن أن يكون فارغًا)
             $table->timestamps(); // created_at و updated_at
         });

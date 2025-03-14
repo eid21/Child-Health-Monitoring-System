@@ -3,13 +3,12 @@
     <main>
         <!--? Slider Area Start-->
         <div class="slider-area">
-            <div class="slider-active dot-style">
-                <!-- Slider Single -->
-                <div class="single-slider d-flex align-items-center slider-height">
-                    <div class="container">
-                        <div class="row align-items-center">
-                            <div class="col-xl-7 col-lg-8 col-md-10 ">
-                             <div class="hero-wrapper">
+           
+            <div class="single-slider d-flex align-items-center slider-height">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-7 col-lg-8 col-md-10">
+                            <div class="hero-wrapper">
                                 <!-- Video icon -->
                                 <div class="video-icon">
                                     <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0" data-animation="bounceIn" data-delay=".4s">
@@ -17,253 +16,295 @@
                                     </a>
                                 </div>
                                 <div class="hero__caption">
-                                    <h1 data-animation="fadeInUp" data-delay=".3s">Health is wealth  keep it healthy </h1>
-                                    <p data-animation="fadeInUp" data-delay=".6s">Almost before we knew it, we<br> had left the ground</p>
-                                    <a href="{{ route('theme.services') }}" class="btn" data-animation="fadeInLeft" data-delay=".3s">Take a Service</a>
+                                    <h1 data-animation="fadeInUp" data-delay=".3s">Health is wealth <br> keep it healthy</h1>
+                                    <p data-animation="fadeInUp" data-delay=".6s">Enter your child's details to get personalized recommendations!</p>
+                                </div>
+                                <!-- Child Info Form -->
+                                <div class="child-form mt-30" data-animation="fadeInUp" data-delay=".8s">
+                                <form action="{{ route('recommend') }}" method="POST">
+    @csrf
+    <div class="form-title mb-20">
+        <h4>Child Information</h4>
+    </div>
+    <div class="row">
+        <!-- Height -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="number" name="height" class="form-control"
+                    placeholder="Height (cm)" value="{{ old('height') }}" required>
+                @error('height')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
+            </div>
+        </div>
+        <!-- Weight -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="number" name="weight" class="form-control"
+                    placeholder="Weight (kg)" value="{{ old('weight') }}" required>
+                @error('weight')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
+            </div>
+        </div>
+        <!-- Age -->
+        <div class="col-md-4">
+            <div class="form-group">
+                <input type="number" name="age" class="form-control"
+                    placeholder="Age (years)" value="{{ old('age') }}" required>
+                @error('age')
+                    <small class="text-danger">{{ $message }}</small>
+                @enderror
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn mt-20">Get Recommendations</button>
+</form>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>    
-            <!-- Slider Single -->
-            <div class="single-slider d-flex align-items-center slider-height">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-xl-7 col-lg-8 col-md-10 ">
-                         <div class="hero-wrapper">
-                            <!-- Video icon -->
-                            <div class="video-icon">
-                                <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0" data-animation="bounceIn" data-delay=".4s">
-                                    <i class="fas fa-play"></i>
-                                </a>
-                            </div>
-                            <div class="hero__caption">
-                                <h1 data-animation="fadeInUp" data-delay=".3s">Health is wealth  keep it healthy </h1>
-                                <p data-animation="fadeInUp" data-delay=".6s">Almost before we knew it, we<br> had left the ground</p>
-                                <a href="#" class="btn" data-animation="fadeInLeft" data-delay=".3s">Take a Service</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>    
-    </div>
-</div>
-<!-- Slider Area End -->
-<!--? About-2 Area Start -->
-<div class="about-area2 section-padding40">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-7 col-md-12">
-                <!-- about-img -->
-                <div class="about-img ">
-                    <img src="{{asset('assets')}}/img/gallery/about.png" alt="">
-                </div>
-            </div>
-            <div class="col-lg-5 col-md-12">
-                <div class="about-caption">
-                    <!-- Section Tittle -->
-                    <div class="section-tittle mb-35">
-                        <h2>Create a healthy 
-                        life you love!</h2>
-                    </div>
-                    <p class="pera-top mb-40">Almost before we knew it, we had left the ground</p>
-                    <p class="pera-bottom mb-30">Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
-                        dignissim dolor, a pretium mi sem ut ipsum. Fusce
-                    fermentum. Pellentesque libero tortor, tincidunt et.</p>
-                    <div class="icon-about">
-                     <img src="{{asset('assets')}}/img/icon/about1.svg" alt="" class=" mr-20">
-                     <img src="{{asset('assets')}}/img/icon/about2.svg" alt="">
-                 </div>
-             </div>
-         </div>
-     </div>
- </div>
-</div>
-<!-- About-2 Area End -->
-<section class="wantToWork-area section-bg3" data-background="{{asset('assets')}}/img/gallery/section_bg01.png">
-    <div class="container">
-        <div class="wants-wrapper w-padding2">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-xl-7 col-lg-9 col-md-8">
-                    <div class="wantToWork-caption wantToWork-caption2">
-                        <h2>Happy mind <br>healthy life</h2>
-                        <p>Almost before we knew it, we<br> had left the ground</p>
-                    </div>
-                </div>
-                <div class="col-xl-2 col-lg-3 col-md-4">
-                    <a href="{{ route('theme.services') }}" class="btn f-right sm-left">Take a Service</a>
-                </div>
-            </div>
+            <!-- تم حذف السلايدر الثاني لمنع تبديل المحتوى -->
         </div>
-    </div>
-</section>
-<!--? Services Area Start -->
-<div class="service-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-cat text-center mb-50">
-                    <div class="cat-icon">
-                        <img src="{{asset('assets')}}/img/icon/services1.svg" alt="">
+        <!-- Slider Area End -->
+        <!--? About-2 Area Start -->
+        <div class="about-area2 section-padding40">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-12">
+                        <!-- about-img -->
+                        <div class="about-img ">
+                            <img src="{{asset('assets')}}/img/gallery/about.png" alt="">
+                        </div>
                     </div>
-                    <div class="cat-cap">
-                        <h5><a href="{{ route('theme.services') }}">Physical Activity</a></h5>
-                        <p>Praesent porttitor, nulla vitae  posuere iaculis, arcu nisl dignissim dolor, a pretium mi  sem ut ipsum.</p>
-                        <a href="{{ route('theme.services') }}" class="plus-btn"><i class="ti-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-cat text-center mb-50">
-                    <div class="cat-icon">
-                        <img src="{{asset('assets')}}/img/icon/services2.svg" alt="">
-                    </div>
-                    <div class="cat-cap">
-                        <h5><a href="{{ route('theme.services') }}">Physical Activity</a></h5>
-                        <p>Praesent porttitor, nulla vitae  posuere iaculis, arcu nisl dignissim dolor, a pretium mi  sem ut ipsum.</p>
-                        <a href="{{ route('theme.services') }}" class="plus-btn"><i class="ti-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="single-cat text-center mb-50">
-                    <div class="cat-icon">
-                        <img src="{{asset('assets')}}/img/icon/services3.svg" alt="">
-                    </div>
-                    <div class="cat-cap">
-                        <h5><a href="{{ route('theme.services') }}">Physical Activity</a></h5>
-                        <p>Praesent porttitor, nulla vitae  posuere iaculis, arcu nisl dignissim dolor, a pretium mi  sem ut ipsum.</p>
-                        <a href="{{ route('theme.services') }}" class="plus-btn"><i class="ti-plus"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Services Area End -->
-<!--? Testimonial Area Start -->
-<section class="testimonial-area testimonial-padding fix">
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
-            <div class=" col-lg-9">
-                <div class="about-caption">
-                    <!-- Testimonial Start -->
-                    <div class="h1-testimonial-active dot-style">
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial position-relative">
-                            <div class="testimonial-caption">
-                                <img src="{{asset('assets')}}/img/icon/quotes-sign.png" alt="" class="quotes-sign">
-                                <p>"The automated process starts as soon as your clothe go into the machine. This site outcome is gleaming clothe. Placeholder text commonly used. In publishing and graphic.</p>
+                    <div class="col-lg-5 col-md-12">
+                        <div class="about-caption">
+                            <!-- Section Tittle -->
+                            <div class="section-tittle mb-35">
+                                <h2>Create a healthy life you love!</h2>
                             </div>
-                            <!-- founder -->
-                            <div class="testimonial-founder d-flex align-items-center">
-                                <div class="founder-img">
-                                    <img src="{{asset('assets')}}/img/icon/testimonial.png" alt="">
-                                </div>
-                                <div class="founder-text">
-                                    <span>Robart Brown</span>
-                                    <p>Creative designer at Colorlib</p>
-                                </div>
+                            <p class="pera-top mb-40">Almost before we knew it, we had left the ground</p>
+                            <p class="pera-bottom mb-30">Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Fusce fermentum. Pellentesque libero tortor, tincidunt et.</p>
+                            <div class="icon-about">
+                                <img src="{{asset('assets')}}/img/icon/about1.svg" alt="" class=" mr-20">
+                                <img src="{{asset('assets')}}/img/icon/about2.svg" alt="">
                             </div>
-                        </div>
-                        <!-- Single Testimonial -->
-                        <div class="single-testimonial position-relative">
-                            <div class="testimonial-caption">
-                                <img src="{{asset('assets')}}/img/icon/quotes-sign.png" alt="" class="quotes-sign">
-                                <p>"The automated process starts as soon as your clothe go into the machine. This site outcome is gleaming clothe. Placeholder text commonly used. In publishing and graphic.</p>
-                            </div>
-                            <!-- founder -->
-                            <div class="testimonial-founder d-flex align-items-center">
-                                <div class="founder-img">
-                                    <img src="{{asset('assets')}}/img/icon/testimonial.png" alt="">
-                                </div>
-                                <div class="founder-text">
-                                    <span>Robart Brown</span>
-                                    <p>Creative designer at Colorlib</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Testimonial End -->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--? Testimonial Area End -->
-<!--? video_start -->
-<div class="container">
-    <div class="video-area section-bg2 d-flex align-items-center"  data-background="{{asset('assets')}}/img/gallery/video-bg.png">
-        <div class="video-wrap position-relative">
-            <div class="video-icon" >
-                <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0"><i class="fas fa-play"></i></a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- video_end -->      
-<!--? Blog Area Start -->
-<section class="home-blog-area section-padding30">
-    <div class="container">
-        <!-- Section Tittle -->
-        <div class="row justify-content-center">
-            <div class="col-lg-7 col-md-9 col-sm-10">
-                <div class="section-tittle text-center mb-100">
-                    <h2>Latest Blog</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="home-blog-single mb-40">
-                    <div class="blog-img-cap">
-                        <div class="blog-img">
-                            <img src="{{asset('assets')}}/img/gallery/blog1.png" alt="">
-                        </div>
-                        <div class="blog-cap">
-                            <h3><a href="{{ route('theme.blog-details') }}">Your daily meal plan</a></h3>
-                            <P>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi 
-                            sem ut ipsum.</P>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="home-blog-single mb-40">
-                    <div class="blog-img-cap">
-                        <div class="blog-img">
-                            <img src="{{asset('assets')}}/img/gallery/blog2.png" alt="">
-                        </div>
-                        <div class="blog-cap">
-                            <h3><a href="{{ route('theme.blog-details') }}">Food is a great source of  medicine</a></h3>
-                            <P>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi 
-                            sem ut ipsum.</P>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="home-blog-single mb-40">
-                    <div class="blog-img-cap">
-                        <div class="blog-img">
-                            <img src="{{asset('assets')}}/img/gallery/blog3.png" alt="">
-                        </div>
-                        <div class="blog-cap">
-                            <h3><a href="{{ route('theme.blog-details') }}">Everyday diet plan</a></h3>
-                            <P>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi 
-                            sem ut ipsum.</P>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- Blog Area End -->
-<!--? About Law Start-->
-@include('theme.partials.about')
-<!-- About Law End-->
-</main>
+        <!-- About-2 Area End -->
+    </main>
+@endsection
+@section('css')
+    <style>
+        /* تحسينات عامة للصفحة */
+        .slider-area {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../img/hero/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .slider-height {
+            min-height: 650px; /* ارتفاع كافي للسلايدر */
+        }
+
+        .single-slider {
+            position: relative;
+            padding: 50px 0;
+        }
+
+        /* تحسين أيقونة الفيديو */
+        .video-icon {
+            margin-bottom: 30px;
+        }
+
+        .video-icon .btn-icon {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            background-color: #ff5e13;
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 94, 19, 0.4);
+        }
+
+        .video-icon .btn-icon:hover {
+            background-color: #e55311;
+            transform: scale(1.05);
+        }
+
+        /* تحسينات للعنوان والوصف */
+        .hero__caption h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .hero__caption p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        /* Child Form Styling - تحسينات */
+        .child-form {
+            background: rgba(255, 255, 255, 0.95); /* زيادة العتامة للخلفية */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* ظل أكثر وضوحاً */
+            max-width: 600px; /* زيادة العرض قليلاً */
+            margin: 30px 0; /* هامش أعلى وأسفل */
+        }
+
+        .child-form .row {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+
+        .child-form .col-md-4 {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-title h4 {
+            font-size: 22px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-hint {
+            display: block;
+            font-size: 12px;
+            color: #777;
+            margin-top: -12px;
+            margin-bottom: 15px;
+        }
+
+        .child-form input[type="number"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #eee; /* حدود أكثر وضوحاً */
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+        }
+
+        .child-form input[type="number"]:focus {
+            border-color: #ff5e13;
+            outline: none;
+            box-shadow: 0 0 8px rgba(255, 94, 19, 0.4);
+            transform: translateY(-2px); /* تأثير رفع خفيف عند التركيز */
+        }
+
+        .child-form input[type="number"]::placeholder {
+            color: #999;
+            font-size: 14px;
+        }
+
+        .child-form .btn {
+            width: 100%;
+            padding: 15px;
+            background: #ff5e13;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 10px rgba(255, 94, 19, 0.3);
+        }
+
+        .child-form .btn:hover {
+            background: #e55311;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 94, 19, 0.4);
+        }
+
+        .child-form .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .child-form .mt-20 {
+            margin-top: 20px;
+        }
+
+        /* إصلاح العناصر المختلفة */
+        .about-caption .section-tittle h2 {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .about-caption .pera-top {
+            font-size: 18px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .about-caption .pera-bottom {
+            color: #777;
+            line-height: 1.7;
+        }
+
+        .icon-about img {
+            transition: transform 0.3s ease;
+        }
+
+        .icon-about img:hover {
+            transform: translateY(-5px);
+        }
+
+        /* تحسينات للتجاوب مع الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .child-form {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .child-form .row {
+                margin-left: -5px;
+                margin-right: -5px;
+            }
+            
+            .child-form .col-md-4 {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            
+            .hero__caption h1 {
+                font-size: 28px;
+            }
+            
+            .hero__caption p {
+                font-size: 16px;
+            }
+        }
+    </style>
 @endsection

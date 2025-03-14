@@ -17,7 +17,7 @@ class Exercise extends Model
     protected $fillable = [
         'name',
         'description',
-        'video',
+        'video_url',
         'image',
     ];
 }

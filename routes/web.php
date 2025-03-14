@@ -12,14 +12,34 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-use App\Http\Controllers\DoctorController;
-use App\Http\Controllers\GymController;
-use App\Http\Controllers\ExerciseController;
+use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\GymController;
+use App\Http\Controllers\Admin\ExerciseController;
 use App\Http\Controllers\ThemeController;
+use App\Http\Controllers\ChildController;
+use App\Http\Controllers\Admin\FoodSystemController;
+use App\Http\Controllers\SubscriptionController;
+use App\Http\Controllers\ContactController;
+
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::delete('/contact/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
+Route::get('/messeges', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/subscribe', [SubscriptionController::class, 'store'])->name('subscribe');
+Route::get('/subscribers', [SubscriptionController::class, 'index'])->name('subscriber.index');
+Route::post('/recommend', [ChildController::class, 'recommend'])->name('recommend');
 
 
 
-use App\Http\Controllers\FoodSystemController;
+
+Route::get('/doctorss', [App\Http\Controllers\DoctorController::class, 'index'])->name('theme.doctors.index');
+Route::get('/gymss', [App\Http\Controllers\GymController::class, 'index'])->name('theme.gyms.index');
+Route::get('/exercisess', [App\Http\Controllers\ExerciseController::class, 'index'])->name('theme.exercises.index');
+Route::get('/foodsystemss', [App\Http\Controllers\FoodSystemController::class, 'index'])->name('theme.foodsystem.index');
+
+
+
+
+
 Route::controller(ThemeController::class)->name('theme.')->group(function(){
 Route::get('/','index')->name('index');
 Route::get('/blog','blog')->name('blog');

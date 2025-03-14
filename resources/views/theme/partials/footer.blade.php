@@ -43,15 +43,30 @@
                             <!-- Form -->
                             <div class="footer-form">
                                 <div id="mc_embed_signup">
-                                    <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
-                                        <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'">
-                                        <div class="form-icon">
-                                            <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
-                                                Subscribe
-                                            </button>
-                                        </div>
-                                        <div class="mt-10 info"></div>
-                                    </form>
+                                <form action="{{route('subscribe')}}" method="POST" class="subscribe_form relative mail_part">
+    @csrf
+    <input type="email" name="EMAIL" id="newsletter-form-email" placeholder="Email Address" 
+           class="placeholder hide-on-focus @error('EMAIL') is-invalid @enderror" 
+           value="{{ old('EMAIL') }}"
+           onfocus="this.placeholder = ''" 
+           onblur="this.placeholder = 'Enter your email'">
+    
+    <div class="form-icon">
+        <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+            Subscribe
+        </button>
+    </div>
+    
+    <div class="mt-10 info">
+        @if(session('success'))
+            <span class="text-success">{{ session('success') }}</span>
+        @endif
+        
+        @error('EMAIL')
+            <span class="text-danger">{{ $message }}</span>
+        @enderror
+    </div>
+</form>
                                 </div>
                             </div>
                             <div class="footer-tittle">
@@ -84,3 +99,25 @@
 
 </footer>
 <!-- Scroll Up -->
+
+@section('css')
+    <style>
+    .text-danger {
+    color: #ff4141;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+.text-success {
+    color: #28a745;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+.is-invalid {
+    border-color: #ff4141 !important;
+}
+    </style>
+@endsection

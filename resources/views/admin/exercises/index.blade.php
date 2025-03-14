@@ -53,13 +53,12 @@
                                     @endif
                                 </td>
                                 <td class="px-4 py-3 fw-medium">{{ $exercise->name }}</td>
-                                <td class="px-4 py-3">{{ $exercise->description }}</td>
+                                <td class="px-4 py-3">{{ Str::limit($exercise->description ?? 'No description', 50) }}</td>
                                 <td class="px-4 py-3">
-                                    @if ($exercise->video)
-                                        <video width="100" controls>
-                                            <source src="{{ asset('storage/' . $exercise->video) }}" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>
+                                    @if ($exercise->video_url)
+                                        <a href="{{ $exercise->video_url }}" target="_blank" class="btn btn-sm btn-outline-info">
+                                            <i class="fas fa-play me-1"></i>Watch Video
+                                        </a>
                                     @else
                                         <span class="text-muted">No Video</span>
                                     @endif

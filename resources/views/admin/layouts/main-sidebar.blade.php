@@ -68,6 +68,24 @@
                       </p>
                   </a>
               </li>
+              <li class="nav-item">
+                  <a href="{{ route('subscriber.index') }}" class="nav-link text-dark">
+                      <i class="nav-icon bi bi-list-ul"></i>
+                      <p>
+                         Subscribers
+                          <i class="nav-arrow bi bi-chevron-right"></i>
+                      </p>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="{{ route('contact.index') }}" class="nav-link text-dark">
+                      <i class="nav-icon bi bi-list-ul"></i>
+                      <p>
+                        Messages
+                          <i class="nav-arrow bi bi-chevron-right"></i>
+                      </p>
+                  </a>
+              </li>
 
           <!--end::Sidebar Menu-->
           </ul>
