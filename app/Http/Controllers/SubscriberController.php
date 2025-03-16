@@ -9,9 +9,10 @@ class SubscriberController extends Controller
 {
     public function index()
     {
-        $subscribers = Subscriber::all(); // جلب كل السجلات من جدول subscriptions
+        $subscribers = Subscriber::all(); // جلب كل السجلات من جدول subscribers
         return view('admin.subscribers.index', compact('subscribers')); // تمرير البيانات للـ View
     }
+
     public function store(Request $request)
     {
         // تحقق من صحة البريد الإلكتروني
@@ -25,6 +26,6 @@ class SubscriberController extends Controller
         ]);
 
         // إعادة التوجيه مع رسالة نجاح
-        return redirect()->back()->with('success', 'Your Email Sent Successfully !');
+        return redirect()->back()->with('success', 'Your Email Sent Successfully!');
     }
 }

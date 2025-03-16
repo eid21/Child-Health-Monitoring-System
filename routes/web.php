@@ -51,6 +51,7 @@ Route::get('/contact','contact')->name('contact');
 Route::get('/about','about')->name('about');
 Route::get('/blog-details', 'blogDetails')->name('blog-details');
 });
+Route::get('/subscribers', [SubscriberController::class, 'index'])->name('subscriber.index');
 Route::post('subscriber/store',[SubscriberController::class ,'store'])->name('subscriber.store');
 Route::resource('foodsystem', FoodSystemController::class);
 Route::resource('doctors', DoctorController::class);
