@@ -20,6 +20,9 @@ use App\Http\Controllers\ChildController;
 use App\Http\Controllers\Admin\FoodSystemController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SubscriberController;
+
+
 
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::delete('/contact/{id}', [ContactController::class, 'destroy'])->name('contact.destroy');
@@ -48,6 +51,7 @@ Route::get('/contact','contact')->name('contact');
 Route::get('/about','about')->name('about');
 Route::get('/blog-details', 'blogDetails')->name('blog-details');
 });
+Route::post('subscriber/store',[SubscriberController::class ,'store'])->name('subscriber.store');
 Route::resource('foodsystem', FoodSystemController::class);
 Route::resource('doctors', DoctorController::class);
 Route::resource('gyms', GymController::class);

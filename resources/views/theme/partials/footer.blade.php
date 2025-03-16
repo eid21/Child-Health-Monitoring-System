@@ -43,30 +43,32 @@
                             <!-- Form -->
                             <div class="footer-form">
                                 <div id="mc_embed_signup">
-                                <form action="{{route('subscribe')}}" method="POST" class="subscribe_form relative mail_part">
-    @csrf
-    <input type="email" name="EMAIL" id="newsletter-form-email" placeholder="Email Address" 
-           class="placeholder hide-on-focus @error('EMAIL') is-invalid @enderror" 
-           value="{{ old('EMAIL') }}"
-           onfocus="this.placeholder = ''" 
-           onblur="this.placeholder = 'Enter your email'">
-    
-    <div class="form-icon">
-        <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
-            Subscribe
-        </button>
-    </div>
-    
-    <div class="mt-10 info">
-        @if(session('success'))
-            <span class="text-success">{{ session('success') }}</span>
-        @endif
-        
-        @error('EMAIL')
-            <span class="text-danger">{{ $message }}</span>
-        @enderror
-    </div>
-</form>
+                                    @if(session('success'))
+                                    <div style="background: #dff0d8; color: #3c763d; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+                                
+                                @error('email')
+                                    <div style="background: #f2dede; color: #a94442; padding: 10px; margin-bottom: 15px; border-radius: 4px;">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                                    <form action="{{route('subscriber.store')}}" method="POST" class="subscribe_form relative mail_part">
+                                        @csrf
+                                        <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                                               class="placeholder hide-on-focus @error('email') is-invalid @enderror"
+                                               value="{{ old('email') }}"
+                                               onfocus="this.placeholder = ''"
+                                               onblur="this.placeholder = 'Enter your email'">
+                                        
+                                        <div class="form-icon">
+                                            <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                Subscribe
+                                            </button>
+                                        </div>
+                                        
+                                    </form>
                                 </div>
                             </div>
                             <div class="footer-tittle">

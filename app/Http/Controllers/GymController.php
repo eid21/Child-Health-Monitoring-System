@@ -4,7 +4,7 @@ use App\Models\Gym;
 
 class GymController extends Controller {
     public function index() {
-        $gyms = Gym::all();
+        $gyms = Gym::paginate(12);
         return view('theme.gyms', compact('gyms'));
     }
 }

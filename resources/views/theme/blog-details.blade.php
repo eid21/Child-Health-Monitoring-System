@@ -399,13 +399,29 @@
   </aside>
   <aside class="single_sidebar_widget newsletter_widget">
     <h4 class="widget_title" style="color: #2d2d2d;">Newsletter</h4>
-    <form action="#">
-     <div class="form-group">
-      <input type="email" class="form-control" onfocus="this.placeholder = ''"
-      onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-    </div>
-    <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-    type="submit">Subscribe</button>
+    <form action="{{ route('subscriber.store') }}" method="POST" class="subscribe_form relative mail_part">
+      @csrf
+      <div class="form-group">
+          <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                 onfocus="this.placeholder = ''"
+                 onblur="this.placeholder = 'Enter email'" 
+                 placeholder='Enter email' 
+                 value="{{ old('email') }}"
+                 required>
+          
+          @error('email')
+              <span class="text-danger">{{ $message }}</span>
+          @enderror
+      </div>
+      
+      @if(session('success'))
+          <div class="alert alert-success">
+              {{ session('success') }}
+          </div>
+      @endif
+      
+      <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+              type="submit">Subscribe</button>
   </form>
   </aside>
   </div>
