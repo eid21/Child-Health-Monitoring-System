@@ -7,6 +7,11 @@ use App\Models\Subscriber;
 
 class SubscriberController extends Controller
 {
+    public function index()
+    {
+        $subscribers = Subscriber::all(); // جلب كل السجلات من جدول subscriptions
+        return view('admin.subscribers.index', compact('subscribers')); // تمرير البيانات للـ View
+    }
     public function store(Request $request)
     {
         // تحقق من صحة البريد الإلكتروني
