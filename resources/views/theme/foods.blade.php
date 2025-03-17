@@ -3,25 +3,30 @@
 @section('content')
     <main>
         <div class="container py-5">
-            <h2 class="text-center mb-5 section-title">Our <span class="text-danger">Food System</span></h2>
+            <div class="section-header text-center mb-5">
+                <span class="subheading">Delicious Options</span>
+                <h2 class="section-title">Our <span class="text-accent">Food System</span></h2>
+                <div class="divider mx-auto"></div>
+            </div>
             
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 @foreach($foodItems as $food)
                     <div class="col">
-                        <div class="card food-card h-100 shadow-sm">
-                            <div class="food-image-wrapper">
-                                <img src="{{ asset('storage/' . $food->image) }}" 
-                                     class="card-img-top" 
-                                     alt="{{ $food->name }}">
-                            </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">{{ $food->name }}</h5>
-                                <div class="time-badge mb-2">
-                                    <i class="far fa-clock me-1"></i> {{ $food->time }}
+                        <div class="food-card">
+                            <div class="food-image">
+                                <img src="{{ asset('storage/' . $food->image) }}" alt="{{ $food->name }}">
+                                <div class="time-overlay">
+                                    <i class="far fa-clock"></i> {{ $food->time }}
                                 </div>
-                                <p class="card-text">
-                                    <small class="text-muted">{{ $food->description }}</small>
-                                </p>
+                            </div>
+                            <div class="food-content">
+                                <h5 class="food-title">{{ $food->name }}</h5>
+                                <p class="food-description">{{ $food->description }}</p>
+                            </div>
+                            <div class="food-footer">
+                                <button class="btn-details">
+                                    <i class="fas fa-info-circle"></i> Details
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -33,93 +38,147 @@
 
 @section('css')
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
         body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Section Header */
+        .section-header {
+            margin-bottom: 3rem;
+        }
+        
+        .subheading {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ff5733;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         .section-title {
+            font-size: 2.2rem;
             font-weight: 700;
-            position: relative;
-            padding-bottom: 15px;
+            color: #333;
         }
         
-        .section-title:after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background-color: #dc3545;
+        .text-accent {
+            color: #ff5733;
+        }
+        
+        .divider {
+            height: 4px;
+            width: 60px;
+            background: linear-gradient(to right, #ff5733, #ff914d);
+            border-radius: 2px;
+            margin: 10px auto;
         }
         
         /* Food Cards */
         .food-card {
+            background: white;
             border-radius: 15px;
             overflow: hidden;
-            border: none;
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
         .food-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(220,53,69,0.1) !important;
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(255, 87, 51, 0.2);
         }
         
-        .food-image-wrapper {
-            height: 180px;
+        .food-image {
+            height: 220px;
+            position: relative;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f8f9fa;
         }
         
-        .food-image-wrapper img {
+        .food-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
         
-        .food-card:hover .food-image-wrapper img {
-            transform: scale(1.05);
+        .food-card:hover .food-image img {
+            transform: scale(1.08);
         }
         
-        .card-title {
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 5px;
-        }
-        
-        .time-badge {
-            display: inline-block;
-            background-color: #fcf0f1;
-            color: #dc3545;
+        .time-overlay {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(255, 87, 51, 0.9);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 12px;
             font-size: 0.85rem;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
-        .card-text {
-            margin-top: 10px;
-            font-size: 14px;
+        .food-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .food-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        
+        .food-description {
+            color: #555;
+            font-size: 1rem;
             line-height: 1.5;
         }
         
-        /* Responsive styles */
+        .food-footer {
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        
+        .btn-details {
+            background: transparent;
+            color: #ff5733;
+            border: 2px solid #ff5733;
+            padding: 10px 18px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .btn-details:hover {
+            background: #ff5733;
+            color: white;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
-            .food-image-wrapper {
-                height: 150px;
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .food-image {
+                height: 180px;
             }
         }
     </style>
 @endsection
 
 @section('header')
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 @endsection

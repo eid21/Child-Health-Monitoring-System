@@ -2,7 +2,7 @@
 @section('content')
     <main>
         <!--? Slider Area Start-->
-        <div class="slider-area">
+        <div class="slider-area" style="background: url('{{ asset('assets') }}/img/hero/h1_hero.png');background-position:cover; background-position: center;  background-repeat: no-repeat; height: 800px;">
            
             <div class="single-slider d-flex align-items-center slider-height">
                 <div class="container">

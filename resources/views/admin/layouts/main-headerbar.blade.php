@@ -8,7 +8,7 @@
         </a>
       </li>
       <li class="nav-item d-none d-md-block">
-        <a href="#" class="nav-link text-dark fw-semibold">Home</a>
+        <a href="{{ route('dashboard') }}" class="nav-link text-dark fw-semibold">Home</a>
       </li>
     </ul>
 
@@ -29,7 +29,14 @@
         </div>
       </li>
 
-     
+      <li class="nav-item">
+        <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">
+          @csrf
+        </form>
+        <a class="nav-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+          Logout
+        </a>
+      </li>
        
         
           

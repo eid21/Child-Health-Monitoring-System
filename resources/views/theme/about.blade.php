@@ -12,7 +12,8 @@
                          <div class="hero-wrapper">
                             <div class="hero__caption">
                                 <h1 data-animation="fadeInUp" data-delay=".3s">About</h1>
-                                <p data-animation="fadeInUp" data-delay=".6s">Almost before we knew it, we<br> had left the ground</p>
+                                <p data-animation="fadeInUp" data-delay=".6s"> Helping Children Build Healthy Habits for Life
+                                    At [weightless childern], we believe that every child deserves a healthy and happy life. Our mission is to support children and families in achieving healthy weight management through balanced nutrition, fun physical activities, and positive lifestyle changes—without restrictive diets or extreme measures.</p>
                             </div>
                         </div>
                     </div>

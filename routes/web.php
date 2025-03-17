@@ -53,10 +53,19 @@ Route::get('/blog-details', 'blogDetails')->name('blog-details');
 });
 Route::get('/subscribers', [SubscriberController::class, 'index'])->name('subscriber.index');
 Route::post('subscriber/store',[SubscriberController::class ,'store'])->name('subscriber.store');
-Route::resource('foodsystem', FoodSystemController::class);
-Route::resource('doctors', DoctorController::class);
-Route::resource('gyms', GymController::class);
+Route::resource('foodsystem', FoodSystemController::class)->middleware(['auth', 'verified']);
+Route::resource('doctors', DoctorController::class)->middleware(['auth', 'verified']);
+Route::resource('gyms', GymController::class)->middleware(['auth', 'verified']);
 Route::resource('exercises', ExerciseController::class);
 Route::get('/dashboard', function () {
     return view('admin.overview');
-});
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
+
+
+require __DIR__.'/auth.php';
