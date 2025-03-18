@@ -29,6 +29,15 @@
 
               <!-- Exercises Link -->
               <li class="nav-item">
+                  <a href="{{ route('dashboard') }}" class="nav-link text-dark">
+                      <i class="nav-icon bi bi-list-ul"></i>
+                      <p>
+                          Overview
+                          <i class="nav-arrow bi bi-chevron-right"></i>
+                      </p>
+                  </a>
+              </li>
+              <li class="nav-item">
                   <a href="{{ route('exercises.index') }}" class="nav-link text-dark">
                       <i class="nav-icon bi bi-list-ul"></i>
                       <p>
