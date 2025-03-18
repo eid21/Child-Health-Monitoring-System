@@ -1,17 +1,9 @@
 @extends('theme.master')
 
 @section('content')
-    <main>
+<main style="background-image: url('{{ asset('assets/img/gallery/pexels-yankrukov-8613312.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; padding: 50px 0;">
         <div class="container py-5">
             <h2 class="text-center mb-5 section-title">Fitness <span class="text-primary">Exercises</span></h2>
-            
-            <!-- Filter/Category Tabs -->
-            <div class="exercise-filters mb-4 text-center">
-                <button class="btn btn-filter active mx-1" data-filter="all">All</button>
-                <button class="btn btn-filter mx-1" data-filter="cardio">Cardio</button>
-                <button class="btn btn-filter mx-1" data-filter="strength">Strength</button>
-                <button class="btn btn-filter mx-1" data-filter="flexibility">Flexibility</button>
-            </div>
             
             <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
                 @foreach($exercises as $exercise)
@@ -24,16 +16,6 @@
                             @endif
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ $exercise->name }}</h5>
-                                <div class="exercise-meta mb-2">
-                                    <span class="difficulty me-2">
-                                        <i class="fas fa-bolt"></i> 
-                                        {{ $exercise->difficulty ?? 'Beginner' }}
-                                    </span>
-                                    <span class="duration">
-                                        <i class="far fa-clock"></i> 
-                                        {{ $exercise->duration ?? '10 min' }}
-                                    </span>
-                                </div>
                                 <p class="card-text flex-grow-1">{{ Str::limit($exercise->description, 80) }}</p>
                                 <div class="card-actions mt-auto">
                                     @if($exercise->video_url)
@@ -41,9 +23,6 @@
                                             <i class="fas fa-play-circle me-1"></i> Watch Video
                                         </a>
                                     @endif
-                                    <button class="btn btn-outline-secondary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#exerciseModal-{{ $exercise->id }}">
-                                        <i class="fas fa-info-circle me-1"></i> Details
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +54,7 @@
                                 </div>
                                 <div class="col-md-7">
                                     <h6>Description</h6>
-                                    <p>{{ $exercise->description }}</p>
+                                    <p class="modal-description">{{ $exercise->description }}</p>
                                     
                                     <div class="exercise-details mt-4">
                                         <div class="row">
@@ -165,10 +144,11 @@
         }
         
         .card-title {
-            font-weight: 600;
+            font-weight: 700;
             color: #333;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 1.4rem; /* زيادة حجم الاسم */
+            margin-bottom: 10px;
+            line-height: 1.3;
         }
         
         .exercise-meta {
@@ -177,9 +157,17 @@
         }
         
         .card-text {
-            font-size: 0.9rem;
+            font-size: 1.1rem; /* زيادة حجم الوصف */
             color: #6c757d;
-            line-height: 1.5;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        /* Modal description */
+        .modal-description {
+            font-size: 1.2rem; /* زيادة حجم الوصف في الـ modal */
+            line-height: 1.7;
+            color: #333;
         }
         
         /* Filter Buttons */
@@ -218,6 +206,18 @@
             
             .card-img-wrapper {
                 height: 160px;
+            }
+            
+            .card-title {
+                font-size: 1.2rem; /* تقليل حجم الاسم على الشاشات الصغيرة */
+            }
+            
+            .card-text {
+                font-size: 1rem; /* تقليل حجم الوصف على الشاشات الصغيرة */
+            }
+            
+            .modal-description {
+                font-size: 1.1rem; /* تقليل حجم الوصف في الـ modal على الشاشات الصغيرة */
             }
         }
     </style>

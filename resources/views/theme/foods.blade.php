@@ -1,7 +1,7 @@
 @extends('theme.master')
 
 @section('content')
-    <main>
+<main style="background-image: url('{{ asset('assets/img/gallery/pexels-ella-olsson-572949-1640773.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; padding: 50px 0;">
         <div class="container py-5">
             <div class="section-header text-center mb-5">
                 <span class="subheading">Delicious Options</span>

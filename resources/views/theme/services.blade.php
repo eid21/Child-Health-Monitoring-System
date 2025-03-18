@@ -1,7 +1,8 @@
 @extends('theme.master')
 @section('content')
 <main>
-    @include('theme.partials.slider', ['title' => 'Services', 'subtitle' => 'Almost before we knew it, we had left the ground'])
+    @include('theme.partials.slider', ['title' => 'Our Services', 'subtitle' => 'Healthy Weight Management for Children
+We provide safe, supportive, and science-backed solutions to help children achieve a healthy weight while ensuring proper growth and development. Our focus is on healthy habits, not strict dieting!'])
 <section class="wantToWork-area">
     <div class="container">
         <div class="wants-wrapper w-padding2">
@@ -20,48 +21,45 @@
     </div>
 </section>
 <!--? Services Area Start -->
-<div class="service-area">
+<!--? Services Area Start -->
+<div class="service-area section-padding">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
+            <!-- Fun & Engaging Physical Activities -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="single-cat text-center mb-50">
-                    <div class="cat-icon">
-                        <img src="{{asset('assets')}}/img/icon/services1.svg" alt="">
-                    </div>
                     <div class="cat-cap">
-                        <h5><a href="{{route('theme.services')}}">Physical Activity</a></h5>
-                        <p>Praesent porttitor, nulla vitae  posuere iaculis, arcu nisl dignissim dolor, a pretium mi  sem ut ipsum.</p>
-                        <a href="{{route('theme.services')}}" class="plus-btn"><i class="ti-plus"></i></a>
+                        <h5><a href="#">🏃 Fun & Engaging Physical Activities</a></h5>
+                        <p>We encourage play-based exercises like dance, swimming, and outdoor games to make fitness enjoyable and sustainable.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
+
+            <!-- Medical & Psychological Support -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="single-cat text-center mb-50">
-                    <div class="cat-icon">
-                        <img src="{{asset('assets')}}/img/icon/services2.svg" alt="">
-                    </div>
                     <div class="cat-cap">
-                        <h5><a href="{{route('theme.services')}}">Physical Activity</a></h5>
-                        <p>Praesent porttitor, nulla vitae  posuere iaculis, arcu nisl dignissim dolor, a pretium mi  sem ut ipsum.</p>
-                        <a href="{{route('theme.services')}}" class="plus-btn"><i class="ti-plus"></i></a>
+                        <h5><a href="#">🩺 Medical & Psychological Support</a></h5>
+                        <p>Our team provides professional guidance to address any underlying medical or emotional factors contributing to weight gain.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
+
+            <!-- Progress Tracking & Continuous Support -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="single-cat text-center mb-50">
-                    <div class="cat-icon">
-                        <img src="{{asset('assets')}}/img/icon/services3.svg" alt="">
-                    </div>
+                    
                     <div class="cat-cap">
-                        <h5><a href="{{route('theme.services')}}">Physical Activity</a></h5>
-                        <p>Praesent porttitor, nulla vitae  posuere iaculis, arcu nisl dignissim dolor, a pretium mi  sem ut ipsum.</p>
-                        <a href="{{route('theme.services')}}" class="plus-btn"><i class="ti-plus"></i></a>
+                        <h5><a href="#">📊 Progress Tracking & Continuous Support</a></h5>
+                        <p>Regular check-ins, goal setting, and progress tracking to ensure sustainable and healthy weight management.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<!-- Services Area End -->
+
 <!-- Services Area End -->
 <!--? video_start -->
 <div class="container pt-40">

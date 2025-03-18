@@ -14,21 +14,7 @@
 
     <!-- Right Side -->
     <ul class="navbar-nav ms-auto gap-3 align-items-center">
-      <!-- Search Box -->
-      <li class="nav-item">
-        <div class="input-group w-100" style="max-width: 300px;">
-          <input 
-            type="text" 
-            class="form-control form-control-sm border-end-0"
-            placeholder="Search..."
-            aria-label="Search"
-          >
-          <span class="input-group-text bg-transparent border-start-0">
-            <i class="bi bi-search fs-5"></i>
-          </span>
-        </div>
-      </li>
-
+    
       <li class="nav-item">
         <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none;">
           @csrf

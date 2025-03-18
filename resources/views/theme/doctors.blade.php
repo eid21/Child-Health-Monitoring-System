@@ -1,9 +1,9 @@
 @extends('theme.master')
 
 @section('content')
-    <main>
-        <div class="container py-5">
-            <h2 class="text-center mb-5 section-title">Our <span class="text-primary">Medical Team</span></h2>
+<main style="background-image: url('{{ asset('assets/img/gallery/pexels-pavel-danilyuk-5998458.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; padding: 50px 0;">
+    <div class="container py-5">
+            <h2 class="text-center mb-5 section-title"> <span class="text-primary">Our Medical Team</span></h2>
             
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 @foreach($doctors as $doctor)
@@ -16,9 +16,8 @@
                             </div>
                             <div class="card-body text-center">
                                 <h5 class="card-title">Dr. {{ $doctor->name }}</h5>
-                                <div class="specialty-badge mb-2">{{ $doctor->speciality }}</div>
                                 <p class="card-text">
-                                    <small class="text-muted">{{ $doctor->qualification ?? 'Medical Doctor' }}</small>
+                                    <small class="text-muted">{{ $doctor->speciality }}</small>
                                 </p>
                                 <hr>
                                 <div class="contact-info">

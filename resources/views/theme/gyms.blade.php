@@ -1,9 +1,9 @@
 @extends('theme.master')
 
 @section('content')
-    <main>
+<main style="background-image: url('{{ asset('assets/img/gallery/pexels-pixabay-260447.jpg') }}'); background-size: cover; background-position: center; background-attachment: fixed; position: relative; padding: 50px 0;">
         <div class="container py-5">
-            <h2 class="text-center mb-5 section-title">Our <span class="text-success">Fitness Centers</span></h2>
+            <h2 class="text-center mb-5 section-title"> <span class="text-success"> Our Fitness Centers</span></h2>
             
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 @foreach($gyms as $gym)

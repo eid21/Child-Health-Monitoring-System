@@ -179,65 +179,59 @@
                 </div>
             </div>
         </div>
-
-        <!-- Charts Row -->
         <div class="row">
-            <!-- Activities Chart -->
-            <div class="col-lg-8">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5 class="card-title">Monthly Activities</h5>
+                        <h5 class="card-title">Quick Actions</h5>
                     </div>
                     <div class="card-body">
-                        <canvas id="activities-chart" height="300"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Completion Rate Chart -->
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Completion Rate</h5>
-                    </div>
-                    <div class="card-body text-center">
-                        <div class="progress-circle mx-auto">
-                            <canvas id="course-activities-chart" height="200"></canvas>
-                        </div>
-                        <div class="mt-3">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span>Exercises</span>
-                                <span>85%</span>
+                        <div class="row text-center">
+                            <div class="col-md-2 col-sm-4 mb-3">
+                                <a href="{{ route('doctors.create') }}" class="btn btn-outline-primary btn-lg w-100">
+                                    <i class="bi bi-plus-circle mb-2 d-block" style="font-size: 24px;"></i>
+                                    Add Doctor
+                                </a>
                             </div>
-                            <div class="progress mb-3">
-                                <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="col-md-2 col-sm-4 mb-3">
+                                <a href="{{ route('gyms.create') }}" class="btn btn-outline-warning btn-lg w-100">
+                                    <i class="bi bi-plus-circle mb-2 d-block" style="font-size: 24px;"></i>
+                                    Add Gym
+                                </a>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span>Food Systems</span>
-                                <span>68%</span>
+                            <div class="col-md-2 col-sm-4 mb-3">
+                                <a href="{{ route('exercises.create') }}" class="btn btn-outline-success btn-lg w-100">
+                                    <i class="bi bi-plus-circle mb-2 d-block" style="font-size: 24px;"></i>
+                                    Add Exercise
+                                </a>
                             </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-warning" role="progressbar" style="width: 68%" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="col-md-2 col-sm-4 mb-3">
+                                <a href="{{ route('foodsystem.create') }}" class="btn btn-outline-danger btn-lg w-100">
+                                    <i class="bi bi-plus-circle mb-2 d-block" style="font-size: 24px;"></i>
+                                    Add Food System
+                                </a>
+                            </div>
+                            <div class="col-md-2 col-sm-4 mb-3">
+                                <a href="{{ route('contact.index') }}" class="btn btn-outline-info btn-lg w-100">
+                                    <i class="bi bi-envelope mb-2 d-block" style="font-size: 24px;"></i>
+                                    Messages
+                                </a>
+                            </div>
+                            <div class="col-md-2 col-sm-4 mb-3">
+                                <a href="{{ route('subscriber.index') }}" class="btn btn-outline-secondary btn-lg w-100">
+                                    <i class="bi bi-people mb-2 d-block" style="font-size: 24px;"></i>
+                                    Subscribers
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Second Row -->
         <div class="row">
             <!-- Statistics Chart -->
-            <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Yearly Statistics</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="statistics-chart" height="300"></canvas>
-                    </div>
-                </div>
-            </div>
+
 
             <!-- Messages/Subscribers Quick View -->
             <div class="col-lg-4">
@@ -443,55 +437,7 @@
     </div>
 
     <!-- Quick Actions Row -->
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Quick Actions</h5>
-                </div>
-                <div class="card-body">
-                    <div class="row text-center">
-                        <div class="col-md-2 col-sm-4 mb-3">
-                            <a href="{{ route('doctors.create') }}" class="btn btn-outline-primary btn-lg w-100">
-                                <i class="bi bi-plus-circle mb-2 d-block" style="font-size: 24px;"></i>
-                                Add Doctor
-                            </a>
-                        </div>
-                        <div class="col-md-2 col-sm-4 mb-3">
-                            <a href="{{ route('gyms.create') }}" class="btn btn-outline-warning btn-lg w-100">
-                                <i class="bi bi-plus-circle mb-2 d-block" style="font-size: 24px;"></i>
-                                Add Gym
-                            </a>
-                        </div>
-                        <div class="col-md-2 col-sm-4 mb-3">
-                            <a href="{{ route('exercises.create') }}" class="btn btn-outline-success btn-lg w-100">
-                                <i class="bi bi-plus-circle mb-2 d-block" style="font-size: 24px;"></i>
-                                Add Exercise
-                            </a>
-                        </div>
-                        <div class="col-md-2 col-sm-4 mb-3">
-                            <a href="{{ route('foodsystem.create') }}" class="btn btn-outline-danger btn-lg w-100">
-                                <i class="bi bi-plus-circle mb-2 d-block" style="font-size: 24px;"></i>
-                                Add Food System
-                            </a>
-                        </div>
-                        <div class="col-md-2 col-sm-4 mb-3">
-                            <a href="{{ route('contact.index') }}" class="btn btn-outline-info btn-lg w-100">
-                                <i class="bi bi-envelope mb-2 d-block" style="font-size: 24px;"></i>
-                                Messages
-                            </a>
-                        </div>
-                        <div class="col-md-2 col-sm-4 mb-3">
-                            <a href="{{ route('subscriber.index') }}" class="btn btn-outline-secondary btn-lg w-100">
-                                <i class="bi bi-people mb-2 d-block" style="font-size: 24px;"></i>
-                                Subscribers
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>
 </div>
 @endsection
