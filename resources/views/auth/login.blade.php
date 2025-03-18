@@ -1,4 +1,3 @@
-
 <x-guest-layout>
     
     <div class="login-container">
