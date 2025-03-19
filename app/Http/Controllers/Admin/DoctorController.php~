@@ -31,7 +31,6 @@ class DoctorController extends Controller
             'phone' => 'required|string|max:20',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'speciality' => 'required|string|max:255',
-            'bio' => 'nullable|string|max:500', // Add validation for bio
         ]);
 
         $photoPath = $this->uploadFile($request, 'photo', 'doctors');
@@ -41,7 +40,6 @@ class DoctorController extends Controller
             'phone' => $request->phone,
             'photo' => $photoPath,
             'speciality' => $request->speciality,
-            'bio' => $request->bio, // Add bio to the create method
         ]);
 
         return redirect()->route('doctors.index')->with('success', 'Doctor added successfully.');
@@ -59,7 +57,6 @@ class DoctorController extends Controller
             'phone' => 'required|string|max:20',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'speciality' => 'required|string|max:255',
-            'bio' => 'nullable|string|max:500', // Add validation for bio
         ]);
 
         $photoPath = $this->uploadFile($request, 'photo', 'doctors', $doctor->photo);
@@ -69,7 +66,6 @@ class DoctorController extends Controller
             'phone' => $request->phone,
             'photo' => $photoPath,
             'speciality' => $request->speciality,
-            'bio' => $request->bio, // Add bio to the update method
         ]);
 
         return redirect()->route('doctors.index')->with('success', 'Doctor updated successfully.');
