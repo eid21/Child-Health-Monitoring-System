@@ -19,5 +19,6 @@ class Exercise extends Model
         'description',
         'video_url',
         'image',
+        'difficulty',
     ];
 }

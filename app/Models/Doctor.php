@@ -19,5 +19,6 @@ class Doctor extends Model
         'phone',
         'photo',
         'speciality',
+        'bio',
     ];
 }

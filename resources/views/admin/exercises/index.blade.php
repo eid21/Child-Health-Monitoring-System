@@ -35,6 +35,7 @@
                             <th class="px-4 py-3">Image</th>
                             <th class="px-4 py-3">Exercise Name</th>
                             <th class="px-4 py-3">Description</th>
+                            <th class="px-4 py-3">Difficulty</th>
                             <th class="px-4 py-3">Video</th>
                             <th class="px-4 py-3 text-end">Actions</th>
                         </tr>
@@ -52,8 +53,14 @@
                                         </div>
                                     @endif
                                 </td>
-                                <td class="px-4 py-3 fw-medium">{{ $exercise->name }}</td>
+
+                                <td class="px-4 py-3 fw-intermediate">{{ $exercise->name }}</td>
                                 <td class="px-4 py-3">{{ Str::limit($exercise->description ?? 'No description', 50) }}</td>
+                                <td class="px-4 py-3">
+                                    <span class="badge bg-{{ $exercise->difficulty === 'beginner' ? 'success' : ($exercise->difficulty === 'intermediate' ? 'warning' : 'danger') }}">
+                                        {{ ucfirst($exercise->difficulty) }}
+                                    </span>
+                                </td>
                                 <td class="px-4 py-3">
                                     @if ($exercise->video_url)
                                         <a href="{{ $exercise->video_url }}" target="_blank" class="btn btn-sm btn-outline-info">
@@ -78,7 +85,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="6" class="text-center py-4 text-muted">
+                                <td colspan="7" class="text-center py-4 text-muted">
                                     <i class="fas fa-dumbbell fa-2x mb-3 d-block"></i>
                                     No exercises found. Create your first exercise now!
                                 </td>

@@ -48,6 +48,17 @@
                     @enderror
                 </div>
                 <div class="mb-3">
+                    <label for="difficulty" class="form-label">Difficulty Level</label>
+                    <select class="form-control @error('difficulty') is-invalid @enderror" id="difficulty" name="difficulty">
+                        <option value="beginner" {{ old('difficulty', $exercise->difficulty ?? '') == 'beginner' ? 'selected' : '' }}>beginner</option>
+                        <option value="intermediate" {{ old('difficulty', $exercise->difficulty ?? '') == 'intermediate' ? 'selected' : '' }}>intermediate</option>
+                        <option value="advanced" {{ old('difficulty', $exercise->difficulty ?? '') == 'advanced' ? 'selected' : '' }}>advanced</option>
+                    </select>
+                    @error('difficulty')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>                
+                <div class="mb-3">
                     <label for="video_url" class="form-label">Video URL</label>
                     <input type="url" class="form-control @error('video_url') is-invalid @enderror" id="video_url" name="video_url" value="{{ old('video_url') }}" placeholder="e.g., https://youtube.com/watch?v=example">
                     @error('video_url')

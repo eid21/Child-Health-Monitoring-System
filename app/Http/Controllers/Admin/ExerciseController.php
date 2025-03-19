@@ -29,6 +29,7 @@ class ExerciseController extends Controller
             'description' => 'nullable|string',
             'video_url' => 'nullable|url|max:255', // Changed to URL validation
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'difficulty' => 'required|string|in:beginner,intermediate,advanced',
         ]);
 
         $imagePath = $this->uploadFile($request, 'image', 'exercises');
@@ -38,6 +39,8 @@ class ExerciseController extends Controller
             'description' => $request->description,
             'video_url' => $request->video_url, // Store video URL instead of file path
             'image' => $imagePath,
+            'difficulty'=>$request->difficulty,
+
         ]);
 
         return redirect()->route('exercises.index')->with('success', 'Exercise added successfully.');
@@ -55,6 +58,9 @@ class ExerciseController extends Controller
             'description' => 'nullable|string',
             'video_url' => 'nullable|url|max:255', // Changed to URL validation
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'difficulty' => 'required|string|in:beginner,intermediate,advanced',
+
+            
         ]);
 
         $imagePath = $this->uploadFile($request, 'image', 'exercises', $exercise->image);
@@ -64,6 +70,7 @@ class ExerciseController extends Controller
             'description' => $request->description,
             'video_url' => $request->video_url, // Update video URL instead of file
             'image' => $imagePath,
+            'difficulty'=>$request->difficulty,
         ]);
 
         return redirect()->route('exercises.index')->with('success', 'Exercise updated successfully.');
