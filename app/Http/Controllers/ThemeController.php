@@ -1,9 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Doctor;
 use Illuminate\Http\Request;
-
 class ThemeController extends Controller
 {
     public function index(){
@@ -29,7 +28,8 @@ class ThemeController extends Controller
     }
 
     public function about(){
-        return view('theme.about');
+        $doctors = Doctor::paginate(12)->take(3);
+        return view('theme.about' , compact('doctors'));
     }
 }
 

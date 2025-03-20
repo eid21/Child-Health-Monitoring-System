@@ -7,8 +7,12 @@
                         <div class="single-footer-caption mb-50">
                             <!-- logo -->
                             <div class="footer-logo mb-25">
-                                <a href="{{ route('theme.index') }}"><img src="{{asset('assets')}}/img/logo/logo2_footer.png" alt=""></a>
-                            </div>
+                                <div class="logo">
+                                    <a href="{{ route('theme.index') }}" class="text-logo">
+                                        <i class="fas fa-child"></i>
+                                        <span>weightless children</span>
+                                    </a>
+                                </div>                            </div>
                             <d iv class="header-area">
                                 <div class="main-header main-header2">
                                     <div class="menu-main d-flex align-items-center justify-content-start">
@@ -30,7 +34,7 @@
                             <!-- social -->
                             <div class="footer-social mt-50">
                                 <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#"><i class="fab fa-pinterest-p"></i></a>
                             </div>
                         </div>
@@ -73,7 +77,7 @@
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">
-                                    <p>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium misem ut ipsum.</p>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +93,7 @@
                         <div class="col-xl-10 ">
                             <div class="footer-copy-right">
                              <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <a href="{{ route('theme.index') }}">Weightless Childern</a> |  Developed by <a href="https://www.facebook.com/optimasoftwaresolutions" target="_blank">Optima Software Solutions</a>
                               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
                           </div>
                       </div>

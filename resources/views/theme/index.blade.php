@@ -11,7 +11,7 @@
                             <div class="hero-wrapper">
                                 <!-- Video icon -->
                                 <div class="video-icon">
-                                    <a class="popup-video btn-icon" href="https://www.youtube.com/watch?v=up68UAfH0d0" data-animation="bounceIn" data-delay=".4s">
+                                    <a class="popup-video btn-icon" href="https://youtu.be/XMcab1MFaLc?si=px1KkTR4ar7txPL1"  target="_blank" data-animation="bounceIn" data-delay=".4s">
                                         <i class="fas fa-play"></i>
                                     </a>
                                 </div>
@@ -86,12 +86,9 @@
                             <div class="section-tittle mb-35">
                                 <h2>Create a healthy life you love!</h2>
                             </div>
-                            <p class="pera-top mb-40">Almost before we knew it, we had left the ground</p>
-                            <p class="pera-bottom mb-30">Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi sem ut ipsum. Fusce fermentum. Pellentesque libero tortor, tincidunt et.</p>
-                            <div class="icon-about">
-                                <img src="{{asset('assets')}}/img/icon/about1.svg" alt="" class=" mr-20">
-                                <img src="{{asset('assets')}}/img/icon/about2.svg" alt="">
-                            </div>
+                            <p class="pera-top mb-40">Why Choose Us?</p>
+                            <p class="pera-bottom mb-30">We take a holistic, science-backed approach to children’s health, ensuring that every child receives personalized guidance tailored to their needs. Our team of nutritionists, fitness experts, and child health specialists work closely with families to build sustainable, lifelong habits.</p>
+
                         </div>
                     </div>
                 </div>

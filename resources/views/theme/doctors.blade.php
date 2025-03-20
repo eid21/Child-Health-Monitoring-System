@@ -51,7 +51,7 @@
                                         <!-- Bio Section -->
                                         <div class="doctor-bio mb-3 flex-grow-1">
                                             <h6 class="bio-heading mb-2"><i class="fas fa-user-md text-primary me-2"></i>About</h6>
-                                            <p class="text-muted">{{ Str::limit($doctor->bio, 120) }}</p>
+                                            <p class="text-muted">{{ Str::limit($doctor->bio, 200) }}</p>
                                             @if (strlen($doctor->bio) > 120)
                                                 <a href="#" class="text-primary text-decoration-none fw-medium read-more" data-bs-toggle="modal" data-bs-target="#bioModal{{ $doctor->id }}">
                                                     Read full profile <i class="fas fa-chevron-right small ms-1"></i>

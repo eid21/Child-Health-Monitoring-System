@@ -26,43 +26,25 @@
 <!--? Team Area Start-->
 <section class="team-area pb-top">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-8">
-                <div class="single-cat text-center mb-30">
-                    <div class="cat-icon">
-                        <img src="{{asset('assets')}}/img/gallery/team1.png" alt="">
-                    </div>
-                    <div class="cat-cap">
-                        <h5><a href="#">Your daily meal plan</a></h5>
-                        <p>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi 
-                        sem ut ipsum.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-8">
-                <div class="single-cat text-center mb-30">
-                    <div class="cat-icon">
-                        <img src="{{asset('assets')}}/img/gallery/team2.png" alt="">
-                    </div>
-                    <div class="cat-cap">
-                        <h5><a href="#">Muscle Gain</a></h5>
-                        <p>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi 
-                        sem ut ipsum.</p>
+        <div class="row justify-content-center">
+            @foreach($doctors as $doctor)
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="single-cat text-center mb-30 doctor-card">
+                        <div class="cat-icon">
+                            <img src="{{ asset('storage/' . $doctor->photo) }}" alt="Dr. {{ $doctor->name }}" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
+                        </div>
+                        <div class="cat-cap">
+                            <h2>Dr. {{ $doctor->name }}</h2>
+                            <p class="card-subtitle text-primary mb-0 fs-5">{{ $doctor->speciality }}</p>
+                            
+                            <hr class="doctor-divider my-3">
+                            <div class="doctor-bio mb-3 flex-grow-1">
+                                <p class="text-muted">{{ Str::limit($doctor->bio, 200) }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-8">
-                <div class="single-cat text-center mb-30">
-                    <div class="cat-icon">
-                        <img src="{{asset('assets')}}/img/gallery/team3.png" alt="">
-                    </div>
-                    <div class="cat-cap">
-                        <h5><a href="#">Weight Loss</a></h5>
-                        <p>Praesent porttitor, nulla vitae posuere iaculis, arcu nisl dignissim dolor, a pretium mi 
-                        sem ut ipsum.</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -85,10 +67,12 @@
                         <h2>Create a healthy 
                         life you love!</h2>
                     </div>
-                    <p class="pera-top mb-40">Almost before we knew it, we had left the ground</p>
-                    <p class="pera-bottom mb-30">Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
-                        dignissim dolor, a pretium mi sem ut ipsum. Fusce
-                    fermentum. Pellentesque libero tortor, tincidunt et.</p>
+                    <p class="pera-top mb-40">Why Choose Us?</p>
+                    <p class="pera-bottom mb-30">✅ Child-Friendly & Fun Programs – We make healthy living enjoyable!
+                        <br>✅ Family-Centered Approach – Parents and caregivers play a key role.
+                        <br>✅ Expert Support – Led by certified health professionals.
+                        <br>✅ Sustainable Results – No quick fixes, just long-term healthy habits.</p>
+
                     <div class="icon-about">
                      <img src="{{asset('assets')}}/img/icon/about1.svg" alt="" class=" mr-20">
                      <img src="{{asset('assets')}}/img/icon/about2.svg" alt="">
@@ -229,7 +213,6 @@
                         <h2>100% satisfaction guaranteed.</h2>
                     </div>
                     <p>Almost before we knew it, we had left the ground</p>
-                    <a href="{{ route('theme.about') }}" class="border-btn">Make an Appointment</a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">

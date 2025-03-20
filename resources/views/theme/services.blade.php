@@ -135,7 +135,6 @@ We provide safe, supportive, and science-backed solutions to help children achie
                             <h2>100% satisfaction guaranteed.</h2>
                         </div>
                         <p>Almost before we knew it, we had left the ground</p>
-                        <a href="{{ route('theme.about') }}" class="border-btn">Make an Appointment</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
